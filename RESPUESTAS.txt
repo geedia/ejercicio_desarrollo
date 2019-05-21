@@ -1,0 +1,69 @@
+## EJERCICIO 1
+
+
+Guardando titular
+curl -X POST -H 'Content-Type: application/json' -H 'Accept: application/json' 
+-d '{
+    "nombre": "DIANA",
+    "apellido": "GALLEGO",
+    "razon_social": "N",
+    "anio": 2019,
+    "tipo_titular": "P",
+    "cuit": 1,
+    "dni": 1
+}' localhost:8080/api/titular
+
+Obteniendo Titular:
+curl -X GET "http://localhost:8080/api/titular/1"
+
+EDITANDO TITULAR
+curl -X PUT -H 'Content-Type: application/json' -H 'Accept: application/json' 
+-d '{
+    "nombre": "DIANA",
+    "apellido": "GALLEGO OLAYA",
+    "razon_social": "N",
+    "anio": 2019,
+    "tipo_titular": "P",
+    "cuit": 1,
+    "dni": 1
+}' localhost:8080/api/titular
+
+Obtener todos los TITULARES:
+curl -X GET "http://localhost:8080/api/titular/listar"
+
+Borrar titular
+curl -X DELETE "http://localhost:8080/api/titular/1"
+
+## EJERCICIO 2
+
+Guardando Cuenta
+curl -X POST -H 'Content-Type: application/json' -H 'Accept: application/json' 
+-d '{
+        "id": 20,
+        "moneda": "D",
+        "saldo": 4000
+    }' localhost:8080/api/cuenta/
+	
+Borrar cuenta
+curl -X DELETE "http://localhost:8080/api/cuenta/20"
+
+Listar Cuentas
+
+curl -X GET  "http://localhost:8080/api/cuenta/listar"
+
+Agregar movimiento:
+curl -X POST -H 'Content-Type: application/json' -H 'Accept: application/json' 
+-d '{
+	"id":2,
+	"descripcion": "prueba2",
+	"fecha": "2019-05-10",
+	"importe": 400000,
+	"tipo": "C",
+	"cuenta_id": 20
+}' localhost:8080/api/cuenta/movimiento/20
+
+Listar movimientos Cuenta:
+
+curl -X GET  "http://localhost:8080/api/cuenta/movimiento/20"
+
+
