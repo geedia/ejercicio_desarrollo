@@ -1,0 +1,14 @@
+spring:    
+  profiles:
+    active: test
+  jpa:
+    database-platform: org.hibernate.dialect.H2Dialect
+    show-sql: true
+  datasource:
+    url: jdbc:h2:mem:testdb
+    driver: org.h2.Driver
+    username: sa
+    initialization-mode: never
+  h2:
+    console:
+      enabled: true
